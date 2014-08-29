@@ -1,4 +1,4 @@
-GenSynthFlow
+GenSynthFlow (Java Software)
 ============
 
 Web documentation: viewable at:
