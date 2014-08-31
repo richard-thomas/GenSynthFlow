@@ -1,6 +1,7 @@
 GenSynthFlow
 ============
 
-Java software for generating synthetic origin-destination commuting flow data
+Java software for generating synthetic origin-destination commuter flow data.
 
-Created as part of an Geographical Information Systems MSc project
+For more details, see:
+   http://richard-thomas.github.io/GenSynthFlow/ 
