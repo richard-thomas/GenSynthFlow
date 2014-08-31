@@ -48,7 +48,6 @@ public class CandOAsPerWZ {
 	 * @param wzFlowList		List of total flows to each Workplace Zone (WZ)
 	 * @param oaFlowList		List of total flows from each Output Area (OA)
 	 * @param indexWZ			Destination Workplace Zone
-	 * @param distanceSelect	Required distance interval (e.g. 0: 0-2km)
 	 * @param minDistance		Minimum distance OA and WZ PWCs must be apart
 	 * @param maxDistance		Minimum distance OA and WZ PWCs must be apart
 	 */

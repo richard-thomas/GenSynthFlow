@@ -128,7 +128,8 @@ public class ZoneFlowList {
 			selectedDistanceCount[i] = flows.get(i).distCounts[distanceSelect];
 			totalFlows += selectedDistanceCount[i];
 			
-			// TODO: free up rest of distCounts array for garbage collection?
+			// If running low on memory, could prompt for garbage collection to
+			// free up rest of distCounts array at this point
 		}
 
 		return totalFlows;

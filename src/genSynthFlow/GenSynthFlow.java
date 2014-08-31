@@ -22,8 +22,11 @@ import java.util.Random;
 import au.com.bytecode.opencsv.CSVWriter;
 
 /**
- * Generate Synthetic Flow Data between OAs and WZs based on tables
- * of total commuters from each OA and from each WZ, combined with
+ * GenSynthFlow is the top level class for a small application to
+ * generate synthetic origin-destination commuter flow data based on
+ * constraints derived from 2011 Census of England and Wales data.
+ * Specifically, it generates Synthetic Flow Data between OAs and WZs based on
+ * tables of total commuters from each OA and from each WZ, combined with
  * knowledge about distance of travel to work for those commuters.
  * 
  * @author Richard Thomas
@@ -63,16 +66,16 @@ public class GenSynthFlow {
 	 * (Input) CSV file of Workplace Zone commuting totals (by distance)
 	 */
 	static final String WZ_TOTALS_CSV_FILENAME =
-			"MSOA_2011_PWC_XY_WP702_4UA.csv";
-//			"WZ_2011_PWC_XY_WP702_4UA.csv";
+//			"MSOA_2011_PWC_XY_WP702_4UA.csv";
+			"WZ_2011_PWC_XY_WP702_4UA.csv";
 //			"WZ_2011_PWC_XY_WP702_Bris_UA.csv";
 	
 	/**
 	 * (Input) CSV file of Output Area commuting totals (by distance)
 	 */
 	static final String OA_TOTALS_CSV_FILENAME =
-			"MSOA_2011_PWC_XY_QS702_4UA.csv";
-//			"OA_2011_PWC_XY_QS702_4UA.csv";
+//			"MSOA_2011_PWC_XY_QS702_4UA.csv";
+			"OA_2011_PWC_XY_QS702_4UA.csv";
 //			"OA_2011_PWC_XY_QS702_Bris_UA.csv";
 	
 	/**
@@ -93,8 +96,8 @@ public class GenSynthFlow {
 	 * line plots using "XY to line" ArcGIS tool or "points2one" QGIS plugin.
 	 */
 	static final String FLOW_MATRIX_CSV_FILESTUB =
-			"MSOA_2011_PWC_Flow_Matrix_4UA_";
-//			"OA_WZ_2011_PWC_Flow_Matrix_4UA_";
+//			"MSOA_2011_PWC_Flow_Matrix_4UA_";
+			"OA_WZ_2011_PWC_Flow_Matrix_4UA_";
 //			"OA_WZ_2011_PWC_Flow_Matrix_Bris_UA_";
 	
 	/**
@@ -104,22 +107,22 @@ public class GenSynthFlow {
 	 * (Set to null if diagnostics not required)
 	 */
 	private static final String OA_ZONECODE_FLOW_ERRORS_FILESTUB =
-			"MSOA_Zone_Coded_Flow_Errors_4UA_" ;
-//			"OA_Zone_Coded_Flow_Errors_4UA_" ;
+//			"MSOA_Zone_Coded_Flow_Errors_4UA_" ;
+			"OA_Zone_Coded_Flow_Errors_4UA_" ;
 //			"OA_Zone_Coded_Flow_Errors_Bris_UA_" ;
 //			null;
 	
 	/**
 	 * Field index along CSV line for ONS WZ geography code
 	 */
-	static final int WZ_CODE_CSV_FIELD = 0; 	// for MSOA table
-//	static final int WZ_CODE_CSV_FIELD = 1; 	// for OA table
+//	static final int WZ_CODE_CSV_FIELD = 0; 	// for MSOA table
+	static final int WZ_CODE_CSV_FIELD = 1; 	// for OA table
 	
 	/**
 	 * Field index along CSV line for ONS OA geography code
 	 */
-	static final int OA_CODE_CSV_FIELD = 0;		// for MSOA table
-//	static final int OA_CODE_CSV_FIELD = 2; 	// for OA table
+//	static final int OA_CODE_CSV_FIELD = 0;		// for MSOA table
+	static final int OA_CODE_CSV_FIELD = 2; 	// for OA table
 	
 	/**
 	 * Range allowed between PWCs for each distance interval
